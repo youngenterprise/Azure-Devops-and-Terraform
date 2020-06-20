@@ -10,6 +10,11 @@ terraform {
     key="terraform.tfstate"
   }
 }
+variable "imagebuild" {
+  type        = string
+  description = "Latest Image Build"
+}
+
 resource "azurerm_resource_group" "tf_test"{
     name="tfmainrg"
     location="centralus"
@@ -23,7 +28,7 @@ resource "azurerm_container_group" "tfcg_test"{
     os_type="Linux"
     container{
         name="weatherapi"
-        image="temujinyoung/weatherapi"
+        image="temujinyoung/weatherapi:${var.imagebuild}"
         cpu="1"
         memory="1"
         ports{
