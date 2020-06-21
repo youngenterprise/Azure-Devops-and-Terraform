@@ -10,7 +10,7 @@ terraform {
     key="terraform.tfstate"
   }
 }
-variable "imagebuild" {
+variable "TF_VAR_imagebuild" {
   type        = string
   description = "Latest Image Build"
 }
