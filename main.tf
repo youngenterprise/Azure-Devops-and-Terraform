@@ -15,7 +15,7 @@ variable "imagebuild" {
   description = "Latest Image Build"
 }
 resource "azurerm_resource_group" "tf_test" {
-  name = "tfmainrg"
+  name = "tfmainrgnew"
   location = "Central US"
 }
 resource "azurerm_container_group" "tfcg_test" {
